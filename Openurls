@@ -1,1 +1,77 @@
-从0开始
+<html>
+<head>
+	<title>批量打开网址-自动弹出版</title>
+	<h3>在下方输入任意链接(一行一条)</h3><br>
+      <textarea id="textarea" oninput="MultiUrlOpener()" style="width:400px;height:100px">
+  </textarea>
+	<hr>
+	<h3>在下方粘贴ASIN,只支持美国(一行一个)</h3><br>
+	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:400px;height:100px">
+  </textarea>
+    <script >
+      // document.getElementById('textarea').value = "http://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
+      	//link
+		function MultiUrlOpener(skp) {
+        ttt=document.getElementById('textarea').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea').value = ''; 
+    }
+		//ASIN----------------------------------
+		function MultiUrlOpener1(skp) {
+        ttt=document.getElementById('textarea1').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://www.amazon.com/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea1').value = ''; 
+    }
+		
+      function removeBlank(str){
+      str=str.replace(/(\s+$)|(^\s+)/g,"");
+      str=str.replace(/\s+/g,"\n");
+      return str;
+      }
+      function trim(txt) {
+        if(!txt||txt==''){return ''};
+        while(txt.charAt(0)==' '){txt=txt.substring(1,txt.length)};
+        while(txt.charAt(txt.length-1)==' '){txt=txt.substring(0,txt.length-1)};
+        return txt;
+      }
+
+        </script>
+  
+</head >
+<body  onload = "MultiUrlOpener();">
+</body>
+</html > 
