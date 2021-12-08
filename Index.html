@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 	<title>批量打开网址-自动弹出版</title>
-	<h3>在下方输入任意链接(一行一条)</h3>
-      <textarea id="textarea" oninput="MultiUrlOpener()" style="width:400px;height:100px">
-  </textarea>
-	<hr>
-	<h3>在下方粘贴ASIN,只支持美国(一行一个)</h3>
-	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:400px;height:100px">
-  </textarea>
-  <hr>
-	<h3>在下方粘贴店铺ID,只支持美国(一行一个)</h3>
-	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:400px;height:100px">
-  </textarea>
+  <form>
+	<h3>粘贴任意链接(一行一条)</h3>
+      <textarea id="textarea" oninput="MultiUrlOpener()" style="width:500px;height:80px">
+  </textarea><hr>
+	<h3>粘贴ASIN,美国ASIN(一行一个)</h3>
+	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:500px;height:80px">
+  </textarea> <hr>
+	<h3>粘贴店铺ID,美国店铺(一行一个)</h3>
+	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:500px;height:80px">
+  </textarea><hr>
+	<h3>粘贴节点ID,美国新品榜(一行一个)</h3>
+	      <textarea id="textarea3" oninput="MultiUrlOpener3()" style="width:500px;height:80px">
+  </textarea><hr>
     <script >
       // document.getElementById('textarea').value = "http://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
       	//link
@@ -60,8 +62,33 @@
         }
 		document.getElementById('textarea1').value = ''; 
     }
-		//店铺---------------------------------
-    function MultiUrlOpener2(skp) {
+		//节点---------------------------------
+    function MultiUrlOpener3(skp) {
+        ttt=document.getElementById('textarea3').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://www.amazon.com/gp/new-releases/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea3').value = ''; 
+    }
+
+
+        //上汽通用---------------------------------
+        function MultiUrlOpener2(skp) {
         ttt=document.getElementById('textarea2').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
@@ -81,6 +108,8 @@
           ttt[i]='http://www.amazon.com/s?me='+ ttt[i];
           window.open(ttt[i],'_blank');
         }
+
+
 		document.getElementById('textarea2').value = ''; 
     }
       function removeBlank(str){
@@ -100,4 +129,4 @@
 </head >
 <body  onload = "MultiUrlOpener();">
 </body>
-</html > 
+</html>
