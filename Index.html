@@ -14,6 +14,9 @@
 	<h3>粘贴节点ID,美国新品榜(一行一个)</h3>
 	      <textarea id="textarea3" oninput="MultiUrlOpener3()" style="width:500px;height:80px">
   </textarea><hr>
+  <h3>粘贴ORDER-ID,美国后台(一行一个)</h3>
+  <textarea id="textarea4" oninput="MultiUrlOpener4()" style="width:500px;height:80px">
+</textarea><hr>
     <script >
       // document.getElementById('textarea').value = "http://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
       	//link
@@ -85,7 +88,29 @@
         }
 		document.getElementById('textarea3').value = ''; 
     }
-
+//后台order id---------------------------------
+function MultiUrlOpener4(skp) {
+        ttt=document.getElementById('textarea4').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://sellercentral.amazon.com/orders-v3/order/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea4').value = ''; 
+    }
 
         //上汽通用---------------------------------
         function MultiUrlOpener2(skp) {
