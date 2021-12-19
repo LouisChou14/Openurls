@@ -132,7 +132,7 @@ function MultiUrlOpener4(skp) {
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='http://sellercentral.amazon.com/messaging/contact?orderID='+ ttt[i];
+          ttt[i]='http://sellercentral.amazon.com/messaging/contact?orderID='+ ttt[i]+'&marketplaceID=ATVPDKIKX0DER';
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea5').value = ''; 
