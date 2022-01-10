@@ -8,6 +8,9 @@
 	<h3>ASIN,美国ASIN(一行一个)</h3>
 	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:500px;height:80px">
   </textarea> <hr>
+	  <h3>Keyword,美国前台搜索</h3>
+  <textarea id="textarea6" oninput="MultiUrlOpener6()" style="width:500px;height:80px">
+</textarea><hr>
 	<h3>店铺ID,美国店铺(一行一个)</h3>
 	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:500px;height:80px">
   </textarea><hr>
@@ -136,6 +139,29 @@ function MultiUrlOpener4(skp) {
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea5').value = ''; 
+    }
+	   //前台搜keyword---------------------------------
+	function MultiUrlOpener6(skp) {
+        ttt=document.getElementById('textarea6').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.com/s?k='+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea6').value = ''; 
     }
 
         //上汽通用---------------------------------
