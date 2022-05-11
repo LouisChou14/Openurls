@@ -41,7 +41,7 @@
 		document.getElementById('textarea').value = ''; 
     }
 		//墨西哥MLM----------------------------------
-		function MultiUrlOpener1(skp) {
+	    		function MultiUrlOpener1(skp) {
         ttt=document.getElementById('textarea1').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
@@ -64,8 +64,8 @@
 		document.getElementById('textarea1').value = ''; 
     }
   //orderid--------------------------------
-    function MultiUrlOpener3(skp) {
-        ttt=document.getElementById('textarea3').value; 
+	            function MultiUrlOpener2(skp) {
+        ttt=document.getElementById('textarea2').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
@@ -84,11 +84,11 @@
           ttt[i]='https://global-selling.mercadolibre.com/orders/'+ ttt[i]+'/detail';
           window.open(ttt[i],'_blank');
         }
-		document.getElementById('textarea3').value = ''; 
-    }
+
 //case id---------------------------------
-function MultiUrlOpener4(skp) {
-        ttt=document.getElementById('textarea4').value; 
+			    
+    function MultiUrlOpener3(skp) {
+        ttt=document.getElementById('textarea3').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
@@ -107,10 +107,8 @@ function MultiUrlOpener4(skp) {
           ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
-		document.getElementById('textarea4').value = ''; 
+		document.getElementById('textarea3').value = ''; 
     }
-	
-
         //上汽通用---------------------------------
 		document.getElementById('textarea2').value = ''; 
     }
@@ -125,7 +123,6 @@ function MultiUrlOpener4(skp) {
         while(txt.charAt(txt.length-1)==' '){txt=txt.substring(0,txt.length-1)};
         return txt;
       }
-
         </script>
   
 </head >
