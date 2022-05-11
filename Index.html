@@ -68,6 +68,28 @@
         }
 		document.getElementById('textarea1').value = ''; 
     }
+	            //店铺ID---------------------------------
+        function MultiUrlOpener2(skp) {
+        ttt=document.getElementById('textarea2').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://www.amazon.com/s?me='+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+
   //节点---------------------------------
     function MultiUrlOpener3(skp) {
         ttt=document.getElementById('textarea3').value; 
@@ -137,27 +159,6 @@ function MultiUrlOpener4(skp) {
         }
 		document.getElementById('textarea5').value = ''; 
     }
-        //店铺ID---------------------------------
-        function MultiUrlOpener2(skp) {
-        ttt=document.getElementById('textarea2').value; 
-        if(trim(ttt)==''){return};
-        ttt=removeBlank(ttt);
-        ttt=escape(ttt);
-        ttt=ttt.replace("%20","%0A");
-        if(ttt.indexOf('%0D%0A')!=-1){
-        ttt=ttt.split('%0D%0A');
-        }else if (ttt.indexOf('%0A')!=-1) {
-        ttt=ttt.split('%0A');
-        }else {
-        ttt=ttt.split('%20');
-        }
-        for(i=0;i<ttt.length;i++){
-          ttt[i]=trim(unescape(ttt[i]));
-          ttt[i] =  ttt[i].replace("http://","");
-          ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='http://www.amazon.com/s?me='+ ttt[i];
-          window.open(ttt[i],'_blank');
-        }
 
         //上汽通用---------------------------------
 		document.getElementById('textarea2').value = ''; 
