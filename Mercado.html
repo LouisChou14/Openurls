@@ -87,10 +87,12 @@
           ttt[i]='https://global-selling.mercadolibre.com/orders/'+ ttt[i]+'/detail';
           window.open(ttt[i],'_blank');
         }
+	document.getElementById('textarea2').value = ''; 
+    }
 
 //case id---------------------------------
 			    
-    function MultiUrlOpener3(skp) {
+	function MultiUrlOpener3(skp) {
         ttt=document.getElementById('textarea3').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
@@ -107,7 +109,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
+          ttt[i]='https://articulo.mercadolibre.com.mx/MLM-'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea3').value = ''; 
@@ -115,7 +117,7 @@
 
 	//compliant---------------------------------
 			    
-    function MultiUrlOpener4(skp) {
+	function MultiUrlOpener4(skp) {
         ttt=document.getElementById('textarea4').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
@@ -132,17 +134,15 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/received_claims/'+ ttt[i];
+          ttt[i]='https://articulo.mercadolibre.com.mx/MLM-'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea4').value = ''; 
-    }		    
-			    
+    }	    
 			    
 			    
         //上汽通用---------------------------------
-		document.getElementById('textarea2').value = ''; 
-    }
+
       function removeBlank(str){
       str=str.replace(/(\s+$)|(^\s+)/g,"");
       str=str.replace(/\s+/g,"\n");
