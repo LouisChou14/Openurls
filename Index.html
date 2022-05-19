@@ -89,6 +89,8 @@
           ttt[i]='http://www.amazon.com/s?me='+ ttt[i];
           window.open(ttt[i],'_blank');
         }
+		document.getElementById('textarea2').value = ''; 
+    }
 
   //节点---------------------------------
     function MultiUrlOpener3(skp) {
@@ -161,8 +163,7 @@ function MultiUrlOpener4(skp) {
     }
 
         //上汽通用---------------------------------
-		document.getElementById('textarea2').value = ''; 
-    }
+
       function removeBlank(str){
       str=str.replace(/(\s+$)|(^\s+)/g,"");
       str=str.replace(/\s+/g,"\n");
