@@ -90,7 +90,7 @@
 	document.getElementById('textarea2').value = ''; 
     }
 
-//case id---------------------------------
+//compliant---------------------------------
 			    
 	function MultiUrlOpener3(skp) {
         ttt=document.getElementById('textarea3').value; 
@@ -109,13 +109,14 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
+	ttt[i]='https://global-selling.mercadolibre.com/received_claims/'+ ttt[i];
+          
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea3').value = ''; 
     }
 
-	//compliant---------------------------------
+	//case id---------------------------------
 			    
 	function MultiUrlOpener4(skp) {
         ttt=document.getElementById('textarea4').value; 
@@ -134,7 +135,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/received_claims/'+ ttt[i];
+	  ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea4').value = ''; 
