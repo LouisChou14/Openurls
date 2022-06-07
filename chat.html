@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>批量打开网址-自动弹出版</title>
+  <form>
+	<h3>粘贴任意链接(一行一条)</h3>
+      <textarea id="textarea" oninput="MultiUrlOpener()" style="width:500px;height:80px">
+  </textarea><hr>
+	<h3>Whatsapp 52(一行一个)</h3>
+	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:500px;height:80px">
+  </textarea> <hr>
+	<h3>MX-OrderID(一行一个)</h3>
+	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:500px;height:80px">
+  </textarea><hr>
+	<h3>MX-Compliant(一行一个)</h3>
+	      <textarea id="textarea3" oninput="MultiUrlOpener3()" style="width:500px;height:80px">
+  </textarea><hr>
+	<h3>MX-Case-ID(一行一个)</h3>
+      <textarea id="textarea4" oninput="MultiUrlOpener4()" style="width:500px;height:80px">
+  </textarea><hr>
+
+    <script >
+      // document.getElementById('textarea').value = "http://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
+      	//link
+		function MultiUrlOpener(skp) {
+        ttt=document.getElementById('textarea').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='http://'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea').value = ''; 
+    }
+		//wa----------------------------------
+	    		function MultiUrlOpener1(skp) {
+        ttt=document.getElementById('textarea1').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://wa.me/52'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea1').value = ''; 
+    }
+  //orderid--------------------------------
+	            function MultiUrlOpener2(skp) {
+        ttt=document.getElementById('textarea2').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://global-selling.mercadolibre.com/orders/'+ ttt[i]+'/detail';
+          window.open(ttt[i],'_blank');
+        }
+	document.getElementById('textarea2').value = ''; 
+    }
+
+//compliant---------------------------------
+			    
+	function MultiUrlOpener3(skp) {
+        ttt=document.getElementById('textarea3').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	ttt[i]='https://global-selling.mercadolibre.com/received_claims/'+ ttt[i];
+          
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea3').value = ''; 
+    }
+
+	//case id---------------------------------
+			    
+	function MultiUrlOpener4(skp) {
+        ttt=document.getElementById('textarea4').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea4').value = ''; 
+    }	    
+			    
+			    
+        //上汽通用---------------------------------
+
+      function removeBlank(str){
+      str=str.replace(/(\s+$)|(^\s+)/g,"");
+      str=str.replace(/\s+/g,"\n");
+      return str;
+      }
+      function trim(txt) {
+        if(!txt||txt==''){return ''};
+        while(txt.charAt(0)==' '){txt=txt.substring(1,txt.length)};
+        while(txt.charAt(txt.length-1)==' '){txt=txt.substring(0,txt.length-1)};
+        return txt;
+      }
+        </script>
+  
+</head >
+<body  onload = "MultiUrlOpener();">
+</body>
+</html>
