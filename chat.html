@@ -8,7 +8,7 @@
 	<h3>Whatsapp 52(一行一个)</h3>
 	      <textarea id="textarea1" oninput="MultiUrlOpener1()" style="width:500px;height:80px">
   </textarea> <hr>
-	<h3>MX-OrderID(一行一个)</h3>
+	<h3>MX-MLM(一行一个)</h3>
 	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:500px;height:80px">
   </textarea><hr>
 	<h3>MX-Compliant(一行一个)</h3>
@@ -84,7 +84,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/orders/'+ ttt[i]+'/detail';
+          ttt[i]='https://articulo.mercadolibre.com.mx/MLM-'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
 	document.getElementById('textarea2').value = ''; 
