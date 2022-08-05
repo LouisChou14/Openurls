@@ -11,7 +11,7 @@
 	<h3>MX-MLM(一行一个)</h3>
 	      <textarea id="textarea2" oninput="MultiUrlOpener2()" style="width:500px;height:80px">
   </textarea><hr>
-	<h3>MX-Compliant(一行一个)</h3>
+	<h3>MX-AMAZON(一行一个)</h3>
 	      <textarea id="textarea3" oninput="MultiUrlOpener3()" style="width:500px;height:80px">
   </textarea><hr>
 	<h3>MX-Case-ID(一行一个)</h3>
@@ -66,7 +66,7 @@
         }
 		document.getElementById('textarea1').value = ''; 
     }
-  //orderid--------------------------------
+  //MLM--------------------------------
 	            function MultiUrlOpener2(skp) {
         ttt=document.getElementById('textarea2').value; 
         if(trim(ttt)==''){return};
@@ -90,7 +90,7 @@
 	document.getElementById('textarea2').value = ''; 
     }
 
-//compliant---------------------------------
+//AMZ---------------------------------
 			    
 	function MultiUrlOpener3(skp) {
         ttt=document.getElementById('textarea3').value; 
@@ -109,7 +109,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-	ttt[i]='https://global-selling.mercadolibre.com/received_claims/'+ ttt[i];
+	ttt[i]='https://www.amazon.com.mx/dp/'+ ttt[i];
           
           window.open(ttt[i],'_blank');
         }
