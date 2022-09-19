@@ -14,7 +14,7 @@
 	<h3>MX-AMAZON(一行一个)</h3>
 	      <textarea id="textarea3" oninput="MultiUrlOpener3()" style="width:500px;height:80px">
   </textarea><hr>
-	<h3>MX-Case-ID(一行一个)</h3>
+	<h3>FacebookGroup-ID(一行一个)</h3>
       <textarea id="textarea4" oninput="MultiUrlOpener4()" style="width:500px;height:80px">
   </textarea><hr>
 
@@ -116,7 +116,7 @@
 		document.getElementById('textarea3').value = ''; 
     }
 
-	//case id---------------------------------
+	//FBG---------------------------------
 			    
 	function MultiUrlOpener4(skp) {
         ttt=document.getElementById('textarea4').value; 
@@ -135,7 +135,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-	  ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
+	  ttt[i]='https://www.facebook.com/groups/'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
 		document.getElementById('textarea4').value = ''; 
