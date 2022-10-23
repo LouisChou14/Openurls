@@ -14,6 +14,7 @@
 	<textarea placeholder="ML-Msg" id="textarea12" oninput="MultiUrlOpener12()" style="width:150px;height:50px"></textarea>
 	<textarea placeholder="ML-CaseID" id="textarea13" oninput="MultiUrlOpener13()" style="width:150px;height:50px"></textarea>
 	 <textarea placeholder="ML-StoreID" id="textarea14" oninput="MultiUrlOpener14()" style="width:150px;height:50px"></textarea>
+	<textarea placeholder="ML-ShipID" id="textarea15" oninput="MultiUrlOpener15()" style="width:150px;height:50px"></textarea>
 	 <hr>
 	<h3>Amazon后台(一行一条)</h3>  
 	<textarea placeholder="US-ASIN" id="textarea31" oninput="MultiUrlOpener31()" style="width:150px;height:50px"></textarea>
@@ -121,7 +122,7 @@
 		document.getElementById('textarea3').value = ''; 
     }
 
-	//FacebookGroup---------------------------------
+	//FacebookGroup-ID---------------------------------
 			    
 	function MultiUrlOpener4(skp) {
         ttt=document.getElementById('textarea4').value; 
@@ -169,10 +170,10 @@
 		document.getElementById('textarea5').value = ''; 
     }	    
 	    
-
+	<h3>Mercado后台(一行一条)</h3>  
 	//ML-OrderID---------------------------------	    
-	function MultiUrlOpener5(skp) {
-        ttt=document.getElementById('textarea5').value; 
+	function MultiUrlOpener11(skp) {
+        ttt=document.getElementById('textarea11').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
@@ -188,12 +189,244 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-	  ttt[i]='https://docs.qq.com/sheet/'+ ttt[i];
+	  ttt[i]='https://global-selling.mercadolibre.com/orders/'+ ttt[i];
           window.open(ttt[i],'_blank');
         }
-		document.getElementById('textarea5').value = ''; 
+		document.getElementById('textarea11').value = ''; 
     }	 
-			    
+	//ML-Msg---------------------------------	    
+	function MultiUrlOpener12(skp) {
+        ttt=document.getElementById('textarea12').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://global-selling.mercadolibre.com/sales/new/messages/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea12').value = ''; 
+    }	 
+	//ML-CaseID---------------------------------	    
+	function MultiUrlOpener13(skp) {
+        ttt=document.getElementById('textarea13').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://global-selling.mercadolibre.com/cases/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea13').value = ''; 
+    }	 
+	//ML-StoreID---------------------------------	    
+	function MultiUrlOpener14(skp) {
+        ttt=document.getElementById('textarea14').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://listado.mercadolibre.com.mx/_CustId_'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea14').value = ''; 
+    }	 
+	   	//ML-ShipID---------------------------------	    
+	function MultiUrlOpener15(skp) {
+        ttt=document.getElementById('textarea15').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/hub';
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea15').value = ''; 
+    }	 
+	 //Amazon后台(一行一条)</h3>  
+	//US-ASIN --------------------------------	    
+	function MultiUrlOpener31(skp) {
+        ttt=document.getElementById('textarea31').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='http://www.amazon.com/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea31').value = ''; 
+    }	     
+	//US-AMZ-StoreID --------------------------------	    
+	function MultiUrlOpener32(skp) {
+        ttt=document.getElementById('textarea32').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='http://www.amazon.com/s?me='+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea32').value = ''; 
+    }	      
+	//US-BS --------------------------------	    
+	function MultiUrlOpener33(skp) {
+        ttt=document.getElementById('textarea33').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='https://www.amazon.com/gp/bestsellers/hi/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea33').value = ''; 
+    }	      
+	//US-HotNew --------------------------------	    
+	function MultiUrlOpener34(skp) {
+        ttt=document.getElementById('textarea34').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='http://www.amazon.com/gp/new-releases/hi/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea34').value = ''; 
+    }	
+	//US-OrdID--------------------------------	    
+	function MultiUrlOpener35(skp) {
+        ttt=document.getElementById('textarea35').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='http://sellercentral.amazon.com/orders-v3/order/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea35').value = ''; 
+    }	
+	//US-Msg--------------------------------	    
+	function MultiUrlOpener36(skp) {
+        ttt=document.getElementById('textarea36').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+	  ttt[i]='http://sellercentral.amazon.com/messaging/contact?orderID='+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+		document.getElementById('textarea36').value = ''; 
+    }	    
+	    
+	    
         //上汽通用---------------------------------
 
       function removeBlank(str){
