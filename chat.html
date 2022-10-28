@@ -11,7 +11,7 @@
  <hr>
  <h3>Mercado后台(一行一条)</h3>  
  <textarea placeholder="ML-OrderID" id="textarea11" oninput="MultiUrlOpener11()" style="width:150px;height:50px"></textarea>
-  <textarea placeholder="ML-Details" id="textarea16" oninput="MultiUrlOpener16()" style="width:150px;height:50px"></textarea>
+  <textarea placeholder="ML-ShipDetails" id="textarea16" oninput="MultiUrlOpener16()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Shipunits" id="textarea15" oninput="MultiUrlOpener15()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Msg" id="textarea12" oninput="MultiUrlOpener12()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-CaseID" id="textarea13" oninput="MultiUrlOpener13()" style="width:150px;height:50px"></textarea>
@@ -288,7 +288,7 @@
         }
   document.getElementById('textarea15').value = ''; 
     }  
-         //ML-Shipunits---------------------------------     
+         //ML-Shipdetails---------------------------------     
  function MultiUrlOpener16(skp) {
         ttt=document.getElementById('textarea16').value; 
         if(trim(ttt)==''){return};
