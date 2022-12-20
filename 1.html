@@ -10,15 +10,14 @@
  <textarea  placeholder="FacebookGroup-ID" id="textarea4" oninput="MultiUrlOpener4()" style="width:150px;height:50px"></textarea>
  <hr>
  <h3>Mercado后台(一行一条)</h3>  
+   <textarea placeholder="ML-Listingmodify" id="textarea16" oninput="MultiUrlOpener16()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-OrderID" id="textarea11" oninput="MultiUrlOpener11()" style="width:150px;height:50px"></textarea>
   <textarea placeholder="ML-OrderUsername" id="textarea18" oninput="MultiUrlOpener18()" style="width:150px;height:50px"></textarea>
- 
  <textarea placeholder="ML-Msg" id="textarea12" oninput="MultiUrlOpener12()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-CaseID" id="textarea13" oninput="MultiUrlOpener13()" style="width:150px;height:50px"></textarea>
   <textarea placeholder="前台ML-StoreID" id="textarea14" oninput="MultiUrlOpener14()" style="width:150px;height:50px"></textarea>
  <br>
    <textarea placeholder="ML-Shipvolumes箱标" id="textarea20" oninput="MultiUrlOpener20()" style="width:150px;height:50px"></textarea>
-  <textarea placeholder="ML-ShipDetails" id="textarea16" oninput="MultiUrlOpener16()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Shipunits" id="textarea15" oninput="MultiUrlOpener15()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipfacility" id="textarea17" oninput="MultiUrlOpener17()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipquery" id="textarea19" oninput="MultiUrlOpener19()" style="width:150px;height:50px"></textarea>
@@ -293,7 +292,7 @@
         }
   document.getElementById('textarea15').value = ''; 
     }  
-         //ML-Shipdetails---------------------------------     
+         //ML-Listingmodify---------------------------------     
  function MultiUrlOpener16(skp) {
         ttt=document.getElementById('textarea16').value; 
         if(trim(ttt)==''){return};
@@ -311,7 +310,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-   ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/details';
+   ttt[i]='https://global-selling.mercadolibre.com/listings/MLM'+ ttt[i] + '/modify';
           window.open(ttt[i],'_blank');
         }
   document.getElementById('textarea16').value = ''; 
