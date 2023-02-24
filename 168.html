@@ -7,7 +7,7 @@
  <textarea  placeholder="MX-MLM" id="textarea2" oninput="MultiUrlOpener2()"style="width:150px;height:50px"></textarea>
      <textarea  placeholder="MX-跟卖链接ID" id="textarea3" oninput="MultiUrlOpener3()"style="width:150px;height:50px"></textarea>
     <textarea  placeholder="MX-美客多店铺ID" id="textarea001" oninput="MultiUrlOpener001()"style="width:150px;height:50px"></textarea>
- 
+ <textarea placeholder="1688链接ID" id="textarea002" oninput="MultiUrlOpener002()" style="width:150px;height:50px"></textarea>
     <script >
       // document.getElementById('textarea').value = "http://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
        //link
@@ -79,6 +79,28 @@
         }
  document.getElementById('textarea2').value = ''; 
     }
+      //1688--------------------------------
+             function MultiUrlOpener002(skp) {
+        ttt=document.getElementById('textarea002').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://detail.1688.com/offer/'+ ttt[i]+'.html';
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textarea002').value = ''; 
 
        //MX-美客多店铺ID--------------------------------
              function MultiUrlOpener001(skp) {
@@ -131,78 +153,7 @@
   document.getElementById('textarea3').value = ''; 
     }
 
- //FacebookGroup-ID---------------------------------
-       
- function MultiUrlOpener4(skp) {
-        ttt=document.getElementById('textarea4').value; 
-        if(trim(ttt)==''){return};
-        ttt=removeBlank(ttt);
-        ttt=escape(ttt);
-        ttt=ttt.replace("%20","%0A");
-        if(ttt.indexOf('%0D%0A')!=-1){
-        ttt=ttt.split('%0D%0A');
-        }else if (ttt.indexOf('%0A')!=-1) {
-        ttt=ttt.split('%0A');
-        }else {
-        ttt=ttt.split('%20');
-        }
-        for(i=0;i<ttt.length;i++){
-          ttt[i]=trim(unescape(ttt[i]));
-          ttt[i] =  ttt[i].replace("http://","");
-          ttt[i] =  ttt[i].replace("https://","");
-   ttt[i]='https://www.facebook.com/groups/'+ ttt[i];
-          window.open(ttt[i],'_blank');
-        }
-  document.getElementById('textarea4').value = ''; 
-    }     
- //腾讯在线文档ID---------------------------------     
- function MultiUrlOpener5(skp) {
-        ttt=document.getElementById('textarea5').value; 
-        if(trim(ttt)==''){return};
-        ttt=removeBlank(ttt);
-        ttt=escape(ttt);
-        ttt=ttt.replace("%20","%0A");
-        if(ttt.indexOf('%0D%0A')!=-1){
-        ttt=ttt.split('%0D%0A');
-        }else if (ttt.indexOf('%0A')!=-1) {
-        ttt=ttt.split('%0A');
-        }else {
-        ttt=ttt.split('%20');
-        }
-        for(i=0;i<ttt.length;i++){
-          ttt[i]=trim(unescape(ttt[i]));
-          ttt[i] =  ttt[i].replace("http://","");
-          ttt[i] =  ttt[i].replace("https://","");
-   ttt[i]='https://docs.qq.com/sheet/'+ ttt[i];
-          window.open(ttt[i],'_blank');
-        }
-  document.getElementById('textarea5').value = ''; 
-    }     
- 
-     //Facebook个人-ID---------------------------------
-       
- function MultiUrlOpener6(skp) {
-        ttt=document.getElementById('textarea6').value; 
-        if(trim(ttt)==''){return};
-        ttt=removeBlank(ttt);
-        ttt=escape(ttt);
-        ttt=ttt.replace("%20","%0A");
-        if(ttt.indexOf('%0D%0A')!=-1){
-        ttt=ttt.split('%0D%0A');
-        }else if (ttt.indexOf('%0A')!=-1) {
-        ttt=ttt.split('%0A');
-        }else {
-        ttt=ttt.split('%20');
-        }
-        for(i=0;i<ttt.length;i++){
-          ttt[i]=trim(unescape(ttt[i]));
-          ttt[i] =  ttt[i].replace("http://","");
-          ttt[i] =  ttt[i].replace("https://","");
-   ttt[i]='https://www.facebook.com/'+ ttt[i];
-          window.open(ttt[i],'_blank');
-        }
-  document.getElementById('textarea6').value = ''; 
-    }     
+
      
         //上汽通用---------------------------------
 
