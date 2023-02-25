@@ -10,6 +10,7 @@
  <textarea  placeholder="MLM-MX" id="textarea2" oninput="MultiUrlOpener2()"style="width:150px;height:50px"></textarea>
   <textarea placeholder="MX-ML店铺ID" id="textarea14" oninput="MultiUrlOpener14()" style="width:150px;height:50px"></textarea>
   <textarea placeholder="1688链接ID" id="textarea002" oninput="MultiUrlOpener002()" style="width:150px;height:50px"></textarea>
+     <textarea placeholder="MLM节点" id="textarea003" oninput="MultiUrlOpener003()" style="width:150px;height:50px"></textarea>
  <hr>
  <h3>Mercado后台(一行一条)</h3>  
    <textarea placeholder="ML-Listingmodify" id="textarea16" oninput="MultiUrlOpener16()" style="width:150px;height:50px"></textarea>
@@ -125,6 +126,30 @@
           window.open(ttt[i],'_blank');
         }
  document.getElementById('textarea002').value = ''; 
+    }
+     
+      //MLM节点--------------------------------
+             function MultiUrlOpener003(skp) {
+        ttt=document.getElementById('textarea003').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.mercadolibre.com.mx/mas-vendidos/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textarea003').value = ''; 
     }
 //AMAZON-MX---------------------------------
        
