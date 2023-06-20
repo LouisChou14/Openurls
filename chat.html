@@ -100,6 +100,29 @@
         }
  document.getElementById('textarea2').value = ''; 
     }
+                 //MX-前台评论--------------------------------
+             function MultiUrlOpenera004(skp) {
+        ttt=document.getElementById('textareaa004').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.com.mx/product-reviews/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareaa004').value = ''; 
+    }
      //MLM节点--------------------------------
              function MultiUrlOpener003(skp) {
         ttt=document.getElementById('textarea003').value; 
@@ -173,29 +196,7 @@
         }
   document.getElementById('textarea3').value = ''; 
     }
-            //MX-前台评论--------------------------------
-             function MultiUrlOpenera01(skp) {
-        ttt=document.getElementById('textareaa01').value; 
-        if(trim(ttt)==''){return};
-        ttt=removeBlank(ttt);
-        ttt=escape(ttt);
-        ttt=ttt.replace("%20","%0A");
-        if(ttt.indexOf('%0D%0A')!=-1){
-        ttt=ttt.split('%0D%0A');
-        }else if (ttt.indexOf('%0A')!=-1) {
-        ttt=ttt.split('%0A');
-        }else {
-        ttt=ttt.split('%20');
-        }
-        for(i=0;i<ttt.length;i++){
-          ttt[i]=trim(unescape(ttt[i]));
-          ttt[i] =  ttt[i].replace("http://","");
-          ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://www.amazon.com.mx/product-reviews/'+ ttt[i];
-          window.open(ttt[i],'_blank');
-        }
- document.getElementById('textareaa01').value = ''; 
-    }
+
      
              //AMZ-us--------------------------------
              function MultiUrlOpenera02(skp) {
