@@ -509,10 +509,16 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-          ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/volumes';
-          window.open(ttt[i],'_blank');
-         ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/units';
-          window.open(ttt[i],'_blank');
+          var url1 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/units';
+     		 window.open(url1, '_blank');
+     		 var url2 = 'https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/traceability/shipping-method';
+     		 window.open(url2, '_blank');
+     		  var url3 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/volumes';
+     		window.open(url3, '_blank');
+     		var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/identifiers';
+     		window.open(url4, '_blank');
+     		var url5 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/traceability';
+     		window.open(url5, '_blank');
         }
   document.getElementById('textareahj').value = ''; 
     }  
