@@ -25,7 +25,7 @@
  <textarea placeholder="ML-Shipunits" id="textarea15" oninput="MultiUrlOpener15()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipfacility" id="textarea17" oninput="MultiUrlOpener17()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipquery" id="textarea19" oninput="MultiUrlOpener19()" style="width:150px;height:50px"></textarea>
-     <textarea placeholder="ML-一键创建货件" id="textarea21" oninput="MultiUrlOpener21()" style="width:150px;height:50px"></textarea>
+     <textarea placeholder="ML-一键创建货件" id="textareahj" oninput="MultiUrlOpenerhj()" style="width:150px;height:50px"></textarea>
   <hr>
  <h3>Amazon后台(一行一条)</h3>  
  <textarea placeholder="US-ASIN" id="textarea31" oninput="MultiUrlOpener31()" style="width:150px;height:50px"></textarea>
@@ -492,8 +492,8 @@
     }  
 
                 // ML-Shipvolumes---------------------------------     
- function MultiUrlOpener21(skp) {
-        ttt=document.getElementById('textarea21').value; 
+ function MultiUrlOpenerhj(skp) {
+        ttt=document.getElementById('textareahj').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
@@ -514,7 +514,7 @@
          ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/units';
           window.open(ttt[i],'_blank');
         }
-  document.getElementById('textarea21').value = ''; 
+  document.getElementById('textareahj').value = ''; 
     }  
   //Amazon后台(一行一条)</h3>  （这里忘记加双斜杠 导致全部废了。。
  //US-ASIN --------------------------------     
