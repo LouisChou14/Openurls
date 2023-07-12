@@ -25,6 +25,7 @@
  <textarea placeholder="ML-Shipunits" id="textarea15" oninput="MultiUrlOpener15()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipfacility" id="textarea17" oninput="MultiUrlOpener17()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipquery" id="textarea19" oninput="MultiUrlOpener19()" style="width:150px;height:50px"></textarea>
+     <textarea placeholder="ML-一键创建货件" id="textarea21" oninput="MultiUrlOpener21()" style="width:150px;height:50px"></textarea>
   <hr>
  <h3>Amazon后台(一行一条)</h3>  
  <textarea placeholder="US-ASIN" id="textarea31" oninput="MultiUrlOpener31()" style="width:150px;height:50px"></textarea>
@@ -464,6 +465,8 @@
         }
   document.getElementById('textarea19').value = ''; 
     }  
+
+
                // ML-Shipvolumes---------------------------------     
  function MultiUrlOpener20(skp) {
         ttt=document.getElementById('textarea20').value; 
@@ -486,6 +489,32 @@
           window.open(ttt[i],'_blank');
         }
   document.getElementById('textarea20').value = ''; 
+    }  
+
+                // ML-Shipvolumes---------------------------------     
+ function MultiUrlOpener21(skp) {
+        ttt=document.getElementById('textarea21').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/volumes';
+          window.open(ttt[i],'_blank');
+         ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/units';
+          window.open(ttt[i],'_blank');
+        }
+  document.getElementById('textarea21').value = ''; 
     }  
   //Amazon后台(一行一条)</h3>  （这里忘记加双斜杠 导致全部废了。。
  //US-ASIN --------------------------------     
@@ -511,6 +540,31 @@
         }
   document.getElementById('textarea31').value = ''; 
     }      
+                  // ML-Shipquery---------------------------------     
+ function MultiUrlOpener21(skp) {
+        ttt=document.getElementById('textarea21').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+   ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds?query='+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+  document.getElementById('textarea21').value = ''; 
+    }  
+
+  
  //US-AMZ-StoreID --------------------------------     
  function MultiUrlOpener32(skp) {
         ttt=document.getElementById('textarea32').value; 
