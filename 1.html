@@ -524,7 +524,7 @@
           ttt[i]=trim(unescape(ttt[i]));
           ttt[i] =  ttt[i].replace("http://","");
           ttt[i] =  ttt[i].replace("https://","");
-        var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/identifiers';
+        var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/traceability/shipping-method';
      		window.open(url4, '_blank');
         }
   document.getElementById('textarea21').value = ''; 
@@ -555,8 +555,8 @@
   document.getElementById('textarea31').value = ''; 
     }      
                   // ML-Shipquery---------------------------------     
- function MultiUrlOpener21(skp) {
-        ttt=document.getElementById('textarea21').value; 
+ function MultiUrlOpener19(skp) {
+        ttt=document.getElementById('textarea19').value; 
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
@@ -575,7 +575,7 @@
    ttt[i]='https://global-selling.mercadolibre.com/shipping/inbounds?query='+ ttt[i];
           window.open(ttt[i],'_blank');
         }
-  document.getElementById('textarea21').value = ''; 
+  document.getElementById('textarea19').value = ''; 
     }  
 
   
