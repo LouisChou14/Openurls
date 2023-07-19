@@ -22,6 +22,7 @@
  
  <br>
     <textarea placeholder="ML-一键创建货件" id="textareahj" oninput="MultiUrlOpenerhj()" style="width:150px;height:50px"></textarea>
+     <textarea placeholder="ML-hub" id="textarea22" oninput="MultiUrlOpener22()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Units" id="textarea20" oninput="MultiUrlOpener20()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-地址" id="textarea21" oninput="MultiUrlOpener21()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Detail" id="textarea17" oninput="MultiUrlOpener17()" style="width:150px;height:50px"></textarea>
@@ -528,6 +529,31 @@
      		window.open(url4, '_blank');
         }
   document.getElementById('textarea21').value = ''; 
+    }  
+
+     //////------hub
+     
+ function MultiUrlOpener22(skp) {
+        ttt=document.getElementById('textarea22').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+        var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/hub';
+     		window.open(url4, '_blank');
+        }
+  document.getElementById('textarea22').value = ''; 
     }  
 
   //Amazon后台(一行一条)</h3>  （这里忘记加双斜杠 导致全部废了。。
