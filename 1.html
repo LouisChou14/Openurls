@@ -21,7 +21,9 @@
  <textarea placeholder="ML-CaseID" id="textarea13" oninput="MultiUrlOpener13()" style="width:150px;height:50px"></textarea>
  
  <br>
-<textarea placeholder="ML-一键创建货件" id="textareahj" oninput="MultiUrlOpenerhj()" style="width:150px;height:50px"></textarea>
+    <textarea placeholder="ML-一键创建货件" id="textareahj" oninput="MultiUrlOpenerhj()" style="width:150px;height:50px"></textarea>
+ <textarea placeholder="ML-Units" id="textarea20" oninput="MultiUrlOpener20()" style="width:150px;height:50px"></textarea>
+ <textarea placeholder="ML-地址" id="textarea21" oninput="MultiUrlOpener21()" style="width:150px;height:50px"></textarea>
  <textarea placeholder="ML-Detail" id="textarea17" oninput="MultiUrlOpener17()" style="width:150px;height:50px"></textarea>
    <textarea placeholder="ML-Shipquery" id="textarea19" oninput="MultiUrlOpener19()" style="width:150px;height:50px"></textarea>
      
@@ -468,15 +470,66 @@
      		 window.open(url1, '_blank');
      		 var url2 = 'https://global-selling.mercadolibre.com/shipping/inbounds/'+ ttt[i] + '/traceability/shipping-method';
      		 window.open(url2, '_blank');
+        var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/identifiers';
+     		window.open(url4, '_blank');
      		  var url3 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/volumes';
      		window.open(url3, '_blank');
-     		var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/identifiers';
-     		window.open(url4, '_blank');
-     		var url5 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/traceability';
-     		window.open(url5, '_blank');
+
         }
-  document.getElementById('textareahj').value = ''; 
+  document.getElementById('textareahj1').value = ''; 
     }  
+
+         ------unit
+     
+ function MultiUrlOpener20(skp) {
+        ttt=document.getElementById('textarea20').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          var url1 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/units';
+     		 window.open(url1, '_blank');
+        }
+  document.getElementById('textarea20').value = ''; 
+    }  
+    
+
+------identifiers
+     
+ function MultiUrlOpener21(skp) {
+        ttt=document.getElementById('textarea21').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+        var url4 = 'https://global-selling.mercadolibre.com/shipping/inbounds/' + ttt[i] + '/identifiers';
+     		window.open(url4, '_blank');
+        }
+  document.getElementById('textarea21').value = ''; 
+    }  
+
   //Amazon后台(一行一条)</h3>  （这里忘记加双斜杠 导致全部废了。。
  //US-ASIN --------------------------------     
  function MultiUrlOpener31(skp) {
