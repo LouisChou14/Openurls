@@ -90,6 +90,7 @@
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
+		ttt = ttt.replace(/MLM-?/g, '');
         ttt=ttt.replace("%20","%0A");
         if(ttt.indexOf('%0D%0A')!=-1){
         ttt=ttt.split('%0D%0A');
@@ -161,6 +162,7 @@
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
+		ttt = ttt.replace(/MLM-?/g, '');
         ttt=ttt.replace("%20","%0A");
         if(ttt.indexOf('%0D%0A')!=-1){
         ttt=ttt.split('%0D%0A');
@@ -232,6 +234,7 @@
         if(trim(ttt)==''){return};
         ttt=removeBlank(ttt);
         ttt=escape(ttt);
+		ttt = ttt.replace(/MLM-?/g, '');
         ttt=ttt.replace("%20","%0A");
         if(ttt.indexOf('%0D%0A')!=-1){
         ttt=ttt.split('%0D%0A');
