@@ -11,16 +11,17 @@
 <hr>
  <h3>美客多Mercado Libre</h3>
 <textarea  placeholder="MLM-墨西哥" id="textarea2" oninput="MultiUrlOpener2()"style="width:150px;height:50px"></textarea>
-<textarea  placeholder="MLB-巴西" id="textarea7" oninput="MultiUrlOpener7()"style="width:150px;height:50px"></textarea>
-<textarea  placeholder="MLC-智利" id="textarea9" oninput="MultiUrlOpener9()"style="width:150px;height:50px"></textarea>
-<br>
 <textarea placeholder="MLM墨西哥前台评论" id="textarea004" oninput="MultiUrlOpener004()" style="width:150px;height:50px"></textarea>
+<textarea placeholder="MLM墨西哥跟卖链接(短数字)" id="textarea00gm" oninput="MultiUrlOpener00gm()" style="width:150px;height:50px"></textarea>   
+<textarea placeholder="MLM墨西哥跟卖链接评论" id="textareagmrev" oninput="MultiUrlOpenergmrev()" style="width:150px;height:50px"></textarea> 
+<textarea placeholder="墨西哥美客多MLMU链接" id="textareaU" oninput="MultiUrlOpenerU()" style="width:150px;height:50px"></textarea>   
+<br>
+<textarea  placeholder="MLB-巴西" id="textarea7" oninput="MultiUrlOpener7()"style="width:150px;height:50px"></textarea>
 <textarea  placeholder="MLB巴西前台评论" id="textarea8" oninput="MultiUrlOpener8()"style="width:150px;height:50px"></textarea>
+<br>
+<textarea  placeholder="MLC-智利" id="textarea9" oninput="MultiUrlOpener9()"style="width:150px;height:50px"></textarea>
 <textarea  placeholder="MLC智利前台评论" id="textarea10" oninput="MultiUrlOpener10()"style="width:150px;height:50px"></textarea>
-    <br>
- <textarea placeholder="MLM墨西哥跟卖链接(短数字)" id="textarea00gm" oninput="MultiUrlOpener00gm()" style="width:150px;height:50px"></textarea>   
- <br>
- <textarea placeholder="墨西哥美客多MLMU链接" id="textareaU" oninput="MultiUrlOpenerU()" style="width:150px;height:50px"></textarea>   
+
 <hr>
  <h3>亚马逊Amazon</h3>
 <textarea  placeholder="AMAZON-MX" id="textarea3" oninput="MultiUrlOpener3()" style="width:150px;height:50px"></textarea>
@@ -259,7 +260,7 @@
     }
 
 
-      //MLMU链接---------------------------------
+
   //MLM-跟卖链接---------------------------------
   function MultiUrlOpener00gm(skp) {
         ttt=document.getElementById('textarea00gm').value; 
@@ -283,6 +284,31 @@
           window.open(ttt[i],'_blank');
         }
  document.getElementById('textarea00gm').value = ''; 
+    }
+
+      //MLM-跟卖链接评论---------------------------------
+  function MultiUrlOpenergmrev(skp) {
+        ttt=document.getElementById('textareagmrev').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+		ttt = ttt.replace(/MLM-?/g, '');
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.mercadolibre.com.mx/noindex/catalog/reviews/MLM'+ ttt[i] + '?noIndex=true&access=view_all&modal=true&controlled=true';
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareagmrev').value = ''; 
     }
 
      //MLM节点--------------------------------
