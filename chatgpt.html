@@ -27,7 +27,13 @@
 <textarea  placeholder="AMAZON-MX" id="textarea3" oninput="MultiUrlOpener3()" style="width:150px;height:50px"></textarea>
 <textarea  placeholder="AMAZON-US" id="textareaa02" oninput="MultiUrlOpenera02()" style="width:150px;height:50px"></textarea>
 <textarea  placeholder="AMAZON-ca" id="textareaa04" oninput="MultiUrlOpenera04()" style="width:150px;height:50px"></textarea>
- <textarea  placeholder="AMAZON-uk" id="textareaa06" oninput="MultiUrlOpenera06()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-uk" id="textareaa06" oninput="MultiUrlOpenera06()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-de" id="textareade" oninput="MultiUrlOpenerde()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-jp" id="textareajp" oninput="MultiUrlOpenerjp()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-fr" id="textareafr" oninput="MultiUrlOpenerfr()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-it" id="textareait" oninput="MultiUrlOpenerit()" style="width:150px;height:50px"></textarea>
+<textarea  placeholder="AMAZON-au" id="textareaau" oninput="MultiUrlOpenerau()" style="width:150px;height:50px"></textarea>
+ 
 <br>
         <textarea  placeholder="AMAZON-MX-review" id="textareaa01" oninput="MultiUrlOpenera01()" style="width:150px;height:50px"></textarea>
 <textarea  placeholder="AMAZON-us-review" id="textareaa03" oninput="MultiUrlOpenera03()" style="width:150px;height:50px"></textarea>
@@ -550,6 +556,7 @@
  document.getElementById('textareaa06').value = ''; 
     }
 
+    
              //AMZ-uk-review--------------------------------
              function MultiUrlOpenera07(skp) {
         ttt=document.getElementById('textareaa07').value; 
@@ -573,6 +580,126 @@
         }
  document.getElementById('textareaa07').value = ''; 
     }
+
+
+                       //AMZ-de--------------------------------
+function MultiUrlOpenerde(skp) {
+        ttt=document.getElementById('textareade').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.de/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareade').value = ''; 
+    }
+ //AMZ-jp--------------------------------
+function MultiUrlOpenerjp(skp) {
+        ttt=document.getElementById('textareajp').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.co.jp/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareajp').value = ''; 
+    }
+
+ //AMZ-it--------------------------------
+function MultiUrlOpenerit(skp) {
+        ttt=document.getElementById('textareait').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.it/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareait').value = ''; 
+    }
+ //AMZ-fr--------------------------------
+function MultiUrlOpenerfr(skp) {
+        ttt=document.getElementById('textareafr').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.fr/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareafr').value = ''; 
+    }
+
+ //AMZ-au-------------------------------
+    function MultiUrlOpenerau(skp) {
+        ttt=document.getElementById('textareaau').value; 
+        if(trim(ttt)==''){return};
+        ttt=removeBlank(ttt);
+        ttt=escape(ttt);
+        ttt=ttt.replace("%20","%0A");
+        if(ttt.indexOf('%0D%0A')!=-1){
+        ttt=ttt.split('%0D%0A');
+        }else if (ttt.indexOf('%0A')!=-1) {
+        ttt=ttt.split('%0A');
+        }else {
+        ttt=ttt.split('%20');
+        }
+        for(i=0;i<ttt.length;i++){
+          ttt[i]=trim(unescape(ttt[i]));
+          ttt[i] =  ttt[i].replace("http://","");
+          ttt[i] =  ttt[i].replace("https://","");
+          ttt[i]='https://www.amazon.au/dp/'+ ttt[i];
+          window.open(ttt[i],'_blank');
+        }
+ document.getElementById('textareaau').value = ''; 
+    }
+
  //FacebookGroup-ID---------------------------------
        
  function MultiUrlOpener4(skp) {
